@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Személy objektumok</title>
+</head>
+<script src="1._feladat.js">
+</script>
+
+<body>
+	<button onclick="kiir();">Objektum állapotát kiír</button>
+	<p id="teljesnev"></p>
+	<p id="eletkor"></p>
+	<p id="hobby"></p>
+</body>
+
+<script type="text/javascript">
+	let kisskati = new Szemely("Kiss", "Katalin", 28, '');
+	kisskati.setHobby("futás");
+
+	function kiir() {
+
+		document.getElementById("teljesnev").innerHTML = "Teljes neve: " +
+			kisskati.teljesnev();
+		document.getElementById("eletkor").innerHTML = "Életkora: " +
+			kisskati.eletkor();
+		document.getElementById("hobby").innerHTML = "Kedvenc elfoglaltsága: " + kisskati.getHobby();
+
+	}
+</script>
+
+</html>

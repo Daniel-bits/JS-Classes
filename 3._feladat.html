@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ételek</title>
+</head>
+<script src="3._feladat.js">
+
+</script>
+
+<body>
+    Étel neve <input type="text" id="input_a"></br>
+    Ár: <input type="text" id="input_b"></br>
+    Kategória: <input type="text" id="input_c"></br>
+    Összetevők: <input type="text" id="input_d"></br>
+
+    <button id="felvesz">Felvesz</button>
+    <button id="kiir">Kiírat</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>Ár</th>
+                <th>Kategória</th>
+                <th>Összetevők</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        const btn = document.getElementById('felvesz');
+        const btn2 = document.getElementById('kiir');
+
+        let ujetel = [];
+
+        btn.onclick = () => {
+        const nev = document.getElementById('input_a').value;
+        const ar = document.getElementById('input_b').value;
+        const kateg = document.getElementById('input_c').value;
+        const osszetevok = document.getElementById('input_d').value;
+
+            let fogas = new Etelek(nev, ar, kateg, osszetevok);
+            ujetel.push(fogas);
+            console.log(ujetel);
+        }
+
+        btn2.onclick = () => {
+            let accumulat = "";
+            ujetel.forEach(etel => {
+                accumulat += etel.toString();
+            });
+            document.querySelector('tbody').innerHTML = accumulat;
+        }
+    </script>
+</body>
+
+</html>
